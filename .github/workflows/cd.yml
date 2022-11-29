@@ -1,0 +1,33 @@
+name: cd
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  cd:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Deploy Using ssh
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: 22
+          script: |
+            cd /var/www/apps
+            rm -R gis-annisa
+            git clone https://${{ secrets.TOKEN }}@github.com/haxorsprogramming/Mobile-GIS-Pencarian-UMKM
+            mv Mobile-GIS-Pencarian-UMKM/ gis-annisa/
+            cp .env_gis_annisa gis-annisa/.env
+            chown -R www-data:www-data gis-annisa/
+            chmod -R 755 gis-annisa/
+            cd gis-annisa
+            composer update
+            php artisan migrate:refresh --seed
+            exit

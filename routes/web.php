@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\C_Home;
+use App\Http\Controllers\C_Sandbox;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [C_Home::class, 'Homepage']);
+
+// testing 
+Route::get('/cek-lokasi', [C_Sandbox::class, 'CekLokasi']);
