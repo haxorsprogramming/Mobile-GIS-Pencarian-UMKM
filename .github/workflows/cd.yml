@@ -28,6 +28,6 @@ jobs:
             chown -R www-data:www-data gis-annisa/
             chmod -R 755 gis-annisa/
             cd gis-annisa
-            composer update
+            composer update --ignore-platform-req=ext-curl
             php artisan migrate:refresh --seed
             exit
