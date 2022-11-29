@@ -13,13 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_proses_pengujian', function (Blueprint $table) {
+        Schema::create('tbl_history_akurasi', function (Blueprint $table) {
             $table -> id();
+            $table -> char('token_history', 100);
             $table -> char('kd_pengujian', 100);
-            $table -> char('nama_penguji', 200);
-            $table -> char('lat_lokasi', 200);
-            $table -> char('lng_lokasi', 200);
-            $table -> char('jarak_ke_umkm', 100);
+            $table -> char('kd_umkm', 200);
+            $table -> char('lat_umkm', 200);
+            $table -> char('lng_umkm', 200);
+            $table -> char('jarak_ke_sumber', 100);
             $table -> timestamps();
         });
     }
@@ -31,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_proses_pengujian');
+        Schema::dropIfExists('tbl_history_akurasi');
     }
 };
