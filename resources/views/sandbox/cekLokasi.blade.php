@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div id="map" style="width: 600px;height:600px;"></div>
+    <div id="map" style="width: 100%;height:600px;"></div>
     <script src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAPS_API_KEY') }}&callback=initMap&v=weekly" defer></script>
     <script>
         var map, infoWindow;

@@ -17,6 +17,7 @@ use App\Http\Controllers\C_Sandbox;
 
 # homepage 
 Route::get('/', [C_Home::class, 'Homepage']);
+Route::get('/beranda', [C_Home::class, 'Beranda']);
 
 # login proses 
 Route::get('/login', [C_Auth::class, 'LoginPage']);
