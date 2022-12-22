@@ -14,7 +14,8 @@ use App\Http\Controllers\C_Sandbox;
 |
 */
 
+
 Route::get('/', [C_Home::class, 'Homepage']);
 
-// testing 
+# testing 
 Route::get('/cek-lokasi', [C_Sandbox::class, 'CekLokasi']);
