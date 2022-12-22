@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\C_Home;
+use App\Http\Controllers\C_Auth;
 use App\Http\Controllers\C_Sandbox;
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +15,11 @@ use App\Http\Controllers\C_Sandbox;
 |
 */
 
-
+# homepage 
 Route::get('/', [C_Home::class, 'Homepage']);
+
+# login proses 
+Route::get('/login', [C_Auth::class, 'LoginPage']);
 
 # testing 
 Route::get('/cek-lokasi', [C_Sandbox::class, 'CekLokasi']);

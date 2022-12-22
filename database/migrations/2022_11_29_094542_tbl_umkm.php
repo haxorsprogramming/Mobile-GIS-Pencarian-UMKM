@@ -4,6 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+
 return new class extends Migration
 {
     /**
@@ -18,13 +19,13 @@ return new class extends Migration
             $table -> char('kd_umkm', 100);
             $table -> char('nama_usaha', 200);
             $table -> char('nama_pemilik', 200);
-            $table -> char('alamat', 200);
-            $table -> char('hp', 200);
-            $table -> char('produk', 200);
-            $table -> char('mulai_dibina', 10);
-            $table -> char('nib', 100);
-            $table -> char('p_irt', 1);
-            $table -> char('sertifikat_halal', 1);
+            $table -> char('alamat', 200) -> nullable();
+            $table -> char('hp', 200) -> nullable();
+            $table -> char('produk', 200) ;
+            $table -> char('mulai_dibina', 10) -> nullable();
+            $table -> char('nib', 100) -> nullable();
+            $table -> char('p_irt', 1) -> nullable();
+            $table -> char('sertifikat_halal', 1) -> nullable();
             $table -> char('lat', 50);
             $table -> char('lng', 50);
             $table -> timestamps();

@@ -1,11 +1,11 @@
 // ROUTE 
-var routeToLogin = 'https://api.haxors.or.id/rini/login_proses.php';
+var routeToLogin = server + 'auth/login-proses';
 
 // VUE OBJECT 
 var divUtama = new Vue({
   el :'#divUtama',
   data : {
-    pengembang : 'Rini Fadillah'
+    pengembang : 'Annisa Nasution'
   },
   methods : {
     masukAtc : function()
@@ -19,7 +19,7 @@ var divUtama = new Vue({
   }
 });
 
-//INISIALISASI
+// INISIALISASI
 let statusKoneksi = navigator.onLine;
 document.querySelector('#txtUsername').focus();
 
@@ -31,7 +31,7 @@ if(statusKoneksi === true){
   $('#capCekServer').addClass('badge-warning');
 }
 
-//FUNCTION 
+// FUNCTION 
 function prosesLogin()
 {
   let username = document.querySelector('#txtUsername').value;
@@ -41,14 +41,15 @@ function prosesLogin()
     pesanUmumApp('warning', 'Isi field!!', 'Harap isi username & password');
   }else{
     let dataSend = {'username':username, 'password':password}
-    $.post(routeToLogin, dataSend, function(data){
-      let obj = JSON.parse(data);
-      if(obj.status === 'sukses'){
-        window.location.assign('mainApp/main.html');
-      }else{
-        pesanUmumApp('error', 'Gagal', 'Login gagal, periksa kembali username & password..');
-      }
-    });
+    console.log(routeToLogin);
+    // $.post(routeToLogin, dataSend, function(data){
+    //   let obj = JSON.parse(data);
+    //   if(obj.status === 'sukses'){
+    //     window.location.assign('mainApp/main.html');
+    //   }else{
+    //     pesanUmumApp('error', 'Gagal', 'Login gagal, periksa kembali username & password..');
+    //   }
+    // });
   }
 
 }
