@@ -45,7 +45,7 @@
                             <i class="fas fa-sign-in-alt"></i> Masuk
                           </a>
                           <div style="margin-top: 20px;">
-                            <a href="javascript:void(0)" v-on:click="daftarAtc"><h5>Registrasi User</h5></a>
+                            <a href="{{ env('APP_URL') }}" v-on:click="daftarAtc"><h5>Halaman Utama Aplikasi</h5></a>
                           </div>
                         </div>
                   </div>

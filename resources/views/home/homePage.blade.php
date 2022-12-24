@@ -69,7 +69,7 @@
 
   </div>
     <script>
-        const server = "{{ url('') }}/";
+        const server = "{{ env('APP_URL') }}";
     </script>
   <script src="https://nos.jkt-1.neo.id/aditiastorage/lib/datatable/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>

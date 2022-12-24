@@ -43,8 +43,7 @@ function prosesLogin()
     let dataSend = {'username':username, 'password':password}
     console.log(routeToLogin);
     $.post(routeToLogin, dataSend, function(data){
-      let obj = JSON.parse(data);
-      if(obj.status === 'success'){
+      if(data.status === 'success'){
         // window.location.assign('mainApp/main.html');
       }else{
         pesanUmumApp('error', 'Gagal', 'Login gagal, periksa kembali username & password..');
