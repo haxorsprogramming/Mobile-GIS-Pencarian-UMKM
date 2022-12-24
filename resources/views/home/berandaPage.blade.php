@@ -6,7 +6,8 @@
     </div>
 <div id="map" style="height:600px;"></div>
 <div style="text-align: center;margin-top:20px;">
-    <a href="javascript:void(0)" class="btn">Cek lokasi UMKM terdekat</a>
+    <a href="javascript:void(0)" class="btn">Cek lokasi UMKM terdekat</a><br/>
+    <small>Harap aktifkan fitur lokasi(GPS) di smartphone anda untuk mendapatkan lokasi sekarang</small>
 </div>
 </div>
 

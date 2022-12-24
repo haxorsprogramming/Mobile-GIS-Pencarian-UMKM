@@ -22,6 +22,8 @@ class C_Home extends Controller
     }
     public function DataUmkm()
     {
-        
+        $dataUmkm = M_Umkm::all();
+        $dr = ['dataUmkm' => $dataUmkm];
+        return view('home.dataUmkm', $dr);
     }
 }
