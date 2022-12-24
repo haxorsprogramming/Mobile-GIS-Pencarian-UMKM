@@ -45,7 +45,7 @@
       <li><a href="javascript:void(0)" @click="dataUmkmAtc" class="hoverable"><i class="material-icons">healing</i>Data UMKM</a>
       </li>
       <!-- <li><a href="#!" class="hoverable"><i class="material-icons">history</i>History Pengujian</a></li> -->
-      <li><a href="{{ url('/login') }}" class="hoverable"><i class="material-icons">undo</i>Log In</a></li>
+      <li><a href="{{ env('APP_URL') }}login" class="hoverable"><i class="material-icons">undo</i>Log In</a></li>
       <li>
         <footer class="page-footer white">
           <div class="container">

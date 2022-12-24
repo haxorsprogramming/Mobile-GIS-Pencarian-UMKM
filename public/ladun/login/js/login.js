@@ -1,5 +1,5 @@
 // ROUTE 
-var routeToLogin = server + 'auth/login-proses';
+var routeToLogin = server + "auth/login/proses";
 
 // VUE OBJECT 
 var divUtama = new Vue({
@@ -42,14 +42,14 @@ function prosesLogin()
   }else{
     let dataSend = {'username':username, 'password':password}
     console.log(routeToLogin);
-    // $.post(routeToLogin, dataSend, function(data){
-    //   let obj = JSON.parse(data);
-    //   if(obj.status === 'sukses'){
-    //     window.location.assign('mainApp/main.html');
-    //   }else{
-    //     pesanUmumApp('error', 'Gagal', 'Login gagal, periksa kembali username & password..');
-    //   }
-    // });
+    $.post(routeToLogin, dataSend, function(data){
+      let obj = JSON.parse(data);
+      if(obj.status === 'success'){
+        // window.location.assign('mainApp/main.html');
+      }else{
+        pesanUmumApp('error', 'Gagal', 'Login gagal, periksa kembali username & password..');
+      }
+    });
   }
 
 }

@@ -10,4 +10,11 @@ class C_Auth extends Controller
     {
         return view('auth.loginPage');
     }
+    public function LoginProses(Request $request)
+    {
+        $status = "";
+        
+        $dr = ['status' => $status];
+        return \Response::json($dr);
+    }
 }

@@ -20,8 +20,9 @@ Route::get('/', [C_Home::class, 'Homepage']);
 Route::get('/beranda', [C_Home::class, 'Beranda']);
 Route::get('/data-umkm', [C_Home::class, 'DataUmkm']);
 
-# login proses 
+# autentifikasi
 Route::get('/login', [C_Auth::class, 'LoginPage']);
+Route::post('/auth/login/proses', [C_Auth::class, 'LoginProses']);
 
 # testing 
 Route::get('/cek-lokasi', [C_Sandbox::class, 'CekLokasi']);
