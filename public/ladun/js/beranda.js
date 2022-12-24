@@ -1,4 +1,5 @@
 var rToBeranda = server + "beranda";
+var rToDataUmkm = server + "data-umkm";
 
 $(document).ready(function(){
   $(".materialboxed").materialbox();
@@ -10,9 +11,6 @@ $(document).ready(function(){
   $("#divUtama").load(rToBeranda);
   $("#judulApps").html("Aplikasi pencarian lokasi UMKM berbasis Mobile GIS");
   //tombol beranda
-  $("#homeSideNav").click(function () {
-    location.reload();
-  });
 
   function updateSistem() {
     $('#divUtama').load('')
@@ -27,14 +25,14 @@ var divApps = new Vue({
     developer : 'Annisa Nasution',
   },
   methods : {
-    pengujianAtc : function()
+    dataUmkmAtc : function()
     {
-      $('#divUtama').load('pengujian.html');
+      $('#divUtama').load(rToDataUmkm);
       $('.button-collapse').sideNav('hide');
     },
-    daftarPenyakitAtc : function()
+    berandaAtc : function()
     {
-      $('#divUtama').load('daftarPenyakit.html');
+      $('#divUtama').load(rToBeranda);
       $('.button-collapse').sideNav('hide');
     }
   }

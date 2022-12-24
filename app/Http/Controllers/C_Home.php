@@ -20,4 +20,8 @@ class C_Home extends Controller
         $dr = ['dataUmkm' => $dataUmkm];
         return view('home.berandaPage', $dr);
     }
+    public function DataUmkm()
+    {
+        
+    }
 }

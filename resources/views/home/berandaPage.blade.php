@@ -10,7 +10,7 @@
 </div>
 </div>
 
-<script src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAPS_API_KEY') }}&callback=initMap&v=weekly" defer></script>
+
 <script>
     var map, infoWindow;
     function initMap() {
@@ -31,4 +31,5 @@
             });
         @endforeach
     }
+    initMap();
 </script>

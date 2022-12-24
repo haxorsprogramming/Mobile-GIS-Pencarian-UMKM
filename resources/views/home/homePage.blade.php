@@ -9,6 +9,7 @@
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAPS_API_KEY') }}" defer></script>
 </head>
 
 <body>
@@ -35,16 +36,16 @@
         <div class="user-view">
           <div class="background blue">
           </div>
-          <a href="#!"><img class="circle" src="https://nos.jkt-1.neo.id/aditiastorage/asset/logo/logo-uin-baru.jpg"></a>
-          <a href="#!"><span class="white-text name">Selamat datang visitor</span></a>
-          <a href="#!"><span class="white-text email">{{ $waktu }}</span></a>
+          <a href="javascript:void(0)"><img class="circle" src="https://nos.jkt-1.neo.id/aditiastorage/asset/logo/logo-uin-baru.jpg"></a>
+          <a href="javascript:void(0)"><span class="white-text name">Selamat datang visitor</span></a>
+          <a href="javascript:void(0)"><span class="white-text email">{{ $waktu }}</span></a>
         </div>
       </li>
-      <li><a href="#!" id="homeSideNav" class="hoverable"><i class="material-icons">home</i>Beranda</a></li>
-      <li><a href="#!" @click="daftarPenyakitAtc" class="hoverable"><i class="material-icons">healing</i>Daftar UMKM</a>
+      <li><a href="javascript:void(0)" @click="berandaAtc" id="homeSideNav" class="hoverable"><i class="material-icons">home</i>Beranda</a></li>
+      <li><a href="javascript:void(0)" @click="dataUmkmAtc" class="hoverable"><i class="material-icons">healing</i>Data UMKM</a>
       </li>
       <!-- <li><a href="#!" class="hoverable"><i class="material-icons">history</i>History Pengujian</a></li> -->
-      <li><a href="../index.html" class="hoverable"><i class="material-icons">undo</i>Log In</a></li>
+      <li><a href="{{ url('/login') }}" class="hoverable"><i class="material-icons">undo</i>Log In</a></li>
       <li>
         <footer class="page-footer white">
           <div class="container">
