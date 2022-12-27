@@ -12,7 +12,14 @@ class C_Auth extends Controller
     }
     public function LoginProses(Request $request)
     {
-        $status = "";
+        $username = $request -> username;
+        $password = $request -> password;
+
+        if($username == "admin" and $password == "admin"){
+            $status = "success";
+        }else{
+            $status = "fail";
+        }
         
         $dr = ['status' => $status];
         return \Response::json($dr);

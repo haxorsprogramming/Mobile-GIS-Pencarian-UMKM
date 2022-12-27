@@ -1,8 +1,9 @@
-// ROUTE 
+/* Route */
 var routeToLogin = server + "auth/login/proses";
-var routerToDaftar = server + "auth/daftar";
+var routeToDaftar = server + "auth/daftar";
+var routeToDashboard = server + "admin";
 
-// VUE OBJECT 
+/* Vue object */
 var divUtama = new Vue({
   el :'#divUtama',
   data : {
@@ -15,12 +16,13 @@ var divUtama = new Vue({
     },
     daftarAtc : function()
     {
-      window.location.assign(routerToDaftar);
+      window.location.assign(routeToDaftar);
     }
   }
 });
 
-// INISIALISASI
+/* Inisialisasi */
+
 let statusKoneksi = navigator.onLine;
 document.querySelector("#txtUsername").focus();
 
@@ -32,7 +34,7 @@ if(statusKoneksi === true){
   $('#capCekServer').addClass('badge-warning');
 }
 
-// FUNCTION 
+/* Function */ 
 function prosesLogin()
 {
   let username = document.querySelector("#txtUsername").value;
@@ -42,16 +44,15 @@ function prosesLogin()
     pesanUmumApp('warning', 'Isi field!!', 'Harap isi username & password');
   }else{
     let dataSend = {'username':username, 'password':password}
-    console.log(routeToLogin);
-    $.post(routeToLogin, dataSend, function(data){
-      if(data.status === 'success'){
-        // window.location.assign('mainApp/main.html');
+    axios.post(routeToLogin, dataSend).then(function(res){
+      let dr = res.data;
+      if(dr.status === 'success'){
+        window.location.assign(routeToDashboard);
       }else{
-        pesanUmumApp('error', 'Gagal', 'Login gagal, periksa kembali username & password..');
+        pesanUmumApp("error", "Gagal", "Login gagal, periksa kembali username & password ...");
       }
     });
   }
-
 }
 
 function pesanUmumApp(icon, title, text)

@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\C_Home;
 use App\Http\Controllers\C_Auth;
 use App\Http\Controllers\C_Sandbox;
+use App\Http\Controllers\C_Main_App;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,6 +25,9 @@ Route::get('/data-umkm', [C_Home::class, 'DataUmkm']);
 # autentifikasi
 Route::get('/login', [C_Auth::class, 'LoginPage']);
 Route::post('/auth/login/proses', [C_Auth::class, 'LoginProses']);
+
+# administrator 
+Route::get('/admin', [C_Main_App::class, 'AdminHome']); 
 
 # testing 
 Route::get('/cek-lokasi', [C_Sandbox::class, 'CekLokasi']);
