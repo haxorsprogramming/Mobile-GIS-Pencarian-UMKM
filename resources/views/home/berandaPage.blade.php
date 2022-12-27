@@ -15,9 +15,9 @@
 <script>
     var map, infoWindow;
 
-    function initMap() {
+    function initMap(lat, lng) {
         map = new google.maps.Map(document.getElementById("map"), {
-            center: { lat: -6.173994159611038, lng: 106.7862738995646 },
+            center: { lat: lat, lng: lng },
             zoom: 16,
         });
         @foreach($dataUmkm as $umkm)
@@ -38,9 +38,14 @@
     {
         let urlGetLocation = "https://www.googleapis.com/geolocation/v1/geolocate?key={{ env('GOOGLE_MAPS_API_KEY') }}";
         $.post(urlGetLocation, function(data){
-            console.log(data);
+            let location = data.location;
+            // console.log(location.lat);
+            let lat = location.lat;
+            let lng = location.lng;
+            // console.log(data);
+            initMap(lat, lng);
         });
     }
 
-    initMap();
+    getLocation();
 </script>

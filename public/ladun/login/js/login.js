@@ -1,5 +1,6 @@
 // ROUTE 
 var routeToLogin = server + "auth/login/proses";
+var routerToDaftar = server + "auth/daftar";
 
 // VUE OBJECT 
 var divUtama = new Vue({
@@ -14,14 +15,14 @@ var divUtama = new Vue({
     },
     daftarAtc : function()
     {
-      window.location.assign('daftar.html');
+      window.location.assign(routerToDaftar);
     }
   }
 });
 
 // INISIALISASI
 let statusKoneksi = navigator.onLine;
-document.querySelector('#txtUsername').focus();
+document.querySelector("#txtUsername").focus();
 
 if(statusKoneksi === true){
   $('#capCekServer').html('Terhubung');
@@ -34,10 +35,10 @@ if(statusKoneksi === true){
 // FUNCTION 
 function prosesLogin()
 {
-  let username = document.querySelector('#txtUsername').value;
-  let password = document.querySelector('#txtPassword').value;
+  let username = document.querySelector("#txtUsername").value;
+  let password = document.querySelector("#txtPassword").value;
 
-  if(username === '' || password === ''){
+  if(username === "" || password === ""){
     pesanUmumApp('warning', 'Isi field!!', 'Harap isi username & password');
   }else{
     let dataSend = {'username':username, 'password':password}
